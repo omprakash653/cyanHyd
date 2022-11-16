@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Appointment{% endblock title %}
+
+{% block body %}
+<div class="container-fluid px-0 my-4">
+<img src="https://source.unsplash.com/1000x300/?doctor,appointment" class="d-block w-100 " alt="..">
+</div>
+<div class="container">
+<h1 class="text-center">Here is Appointment</h1>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Patient Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone No.</th>
+        <th scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for patient in appointments %}
+      <tr>
+        <th scope="row">{{forloop.counter}}</th>
+        <td>{{patient.name}}</td>
+        <td>{{patient.email}}</td>
+        <td>{{patient.phone}}</td>
+        <td>{{patient.desc}}</td>
+      </tr>
+    {% endfor %} 
+    </tbody>
+  </table>
+</div>
+
+{% endblock body %}            
